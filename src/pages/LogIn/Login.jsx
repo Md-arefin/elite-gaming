@@ -31,7 +31,7 @@ const Login = () => {
                 <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-gray-500 lg:mr-10">
                     <div className="card-body">
 
-
+                        <h5 className='text-3xl font-semibold text-center'>Please Login</h5>
                         <form onSubmit={handleLogin}>
                             <div className="form-control">
                                 <label className="label">
@@ -45,19 +45,20 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                                <p className='text-xs mt-5 pl-1'>Show Password</p>
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    <br />
-                                </label>
                             </div>
+                            <p className='text-xs mt-5 pl-1'>Show Password</p>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
+
+                                <button className="btn my-5">
+                                    <img className='w-8 mx-5' src="https://i.ibb.co/XZxLpRs/png-transparent-google-logo-google-text-trademark-logo-removebg-preview.png" alt="" />
+                                    Login with
+                                    Google</button>
                             </div>
                         </form>
 
-                        <p>New to Elite Gamers Gear? Please
-                            <Link to='/registration'> Registration</Link>
+                        <p className='text-center mt-3'>New to Elite Gamers Gear?
+                            <Link className='mx-1' to='/registration'> Please Registration</Link>
                         </p>
 
                     </div>
