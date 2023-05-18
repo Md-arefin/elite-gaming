@@ -2,7 +2,7 @@
 
 const Blog = () => {
     return (
-        <div className="space-y-5 px-5">
+        <div className="space-y-5 my-12 px-5">
             {/* Question-1 */}
             <article>
                 <h4 className="text-2xl ">What is an access token and refresh token? How do they work and where should we store them on the client-side?</h4>
@@ -27,17 +27,17 @@ const Blog = () => {
                     <img className="my-10 mx-auto rounded" src="https://i.ibb.co/8rhrGJH/differences-between-sql-databases-and-nosql-databases.webp" alt="" />
                 </div>
                 <div>
-               
-                    <div  className="overflow-x-auto">
+
+                    <div className="overflow-x-auto">
                         <table className="table w-100%">
                             {/* head */}
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th  className="text-lg"> Characteristics</th>
+                                    <th className="text-lg"> Characteristics</th>
                                     <th className="text-lg">Structured Query Language (SQL)</th>
 
-                                    <th  className="text-lg">Not only SQL ( NoSQL)</th>
+                                    <th className="text-lg">Not only SQL ( NoSQL)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,9 +45,9 @@ const Blog = () => {
                                 <tr className="max-w-md">
                                     <th>1</th>
                                     <td >Data Model</td>
-                                    <td> 
-                                    SQL databases follow a rigid,<br /> predefined schema   with a fixed structure.  <br /> Data is organized into tables with rows and  <br /> columns,  and relationships between tables are  <br /> established using foreign keys.
-                                    
+                                    <td>
+                                        SQL databases follow a rigid,<br /> predefined schema   with a fixed structure.  <br /> Data is organized into tables with rows and  <br /> columns,  and relationships between tables are  <br /> established using foreign keys.
+
                                     </td>
 
                                     <td >NoSQL databases offer flexible <br />  and schema-less data models. They can be <br /> categorized into different types: <br />  document-based, key-value, columnar, <br />  or graph databases. Each type has <br /> its own way of organizing and storing data.</td>
@@ -91,18 +91,24 @@ const Blog = () => {
             <article>
                 <h4 className="text-2xl ">What is express js? What is Nest JS?</h4>
                 <div>
-                    <img className="mx-auto my-10 rounded-lg" src="https://i.ibb.co/hmR2scL/Access-Token.jpg" alt="" />
+                    <img className="mx-auto my-10 rounded-lg" src="https://i.ibb.co/wdScytG/express-js.webp" alt="" />
                 </div>
-                <p> </p>
+                <p>
+                    Express.js is a lightweight and flexible web application framework for Node.js. It simplifies the process of building web applications and APIs by providing an intuitive routing system, middleware support, and integration with various modules. With Express.js, developers can define routes, handle HTTP methods, and implement middleware for tasks like request parsing, authentication, and error handling. It also offers support for templating engines, allowing dynamic content generation. Express.js is highly regarded for its simplicity, extensibility, and large ecosystem of middleware and plugins. It empowers developers to quickly create scalable and efficient web applications using JavaScript on the server-side.
+                </p>
+                <br />
+                <p>
+                    Nest.js is a progressive and extensible framework for building efficient, scalable, and maintainable server-side applications. It is based on TypeScript and utilizes modern JavaScript features. Nest.js follows the modular architecture pattern and is heavily inspired by Angular, making it ideal for creating enterprise-level applications. It provides features like dependency injection, decorators, and a powerful module system. Nest.js supports a wide range of use cases, including RESTful APIs, real-time applications, microservices, and more. With its focus on developer productivity and code maintainability, Nest.js is a popular choice for building robust and scalable server-side applications in the Node.js ecosystem.
+                </p>
             </article>
 
             {/* Question-4 */}
             <article>
                 <h4 className="text-2xl ">What is MongoDB aggregate and how does it work?</h4>
                 <div>
-                    <img className="mx-auto my-10 rounded-lg" src="https://i.ibb.co/hmR2scL/Access-Token.jpg" alt="" />
+                    <img className="mx-auto my-10 rounded-lg" src="https://i.ibb.co/2jQ5vjd/4e5ee169492bc2620d232b33ebc000b75adbbe6d.png" alt="" />
                 </div>
-                <p> </p>
+                <p> In MongoDB, the aggregate framework is a powerful tool used for data aggregation and analysis. It allows you to perform complex operations on collections, combining multiple stages to transform and process data. The aggregate pipeline consists of a series of stages, each modifying the data in some way. These stages can include operations like filtering, grouping, projecting, sorting, and performing mathematical calculations. The pipeline processes documents sequentially, passing the results from one stage to the next. By combining different stages, the aggregate framework enables you to efficiently retrieve and manipulate data, providing advanced aggregation capabilities in MongoDB.</p>
             </article>
         </div>
     );
