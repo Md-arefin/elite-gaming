@@ -12,6 +12,7 @@ const Footer = () => {
                 <Link to='/' className="link link-hover">Home</Link>
                 <Link to='allToys' className="link link-hover">All Toys</Link>
                 <Link to='blog' className="link link-hover">Blog</Link>
+                <p>Copyright © 2023 - All right reserved</p>
             </div>
             <div>
                 <span className="footer-title">Social</span>
