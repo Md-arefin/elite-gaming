@@ -3,26 +3,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 
-    const navItems = <>
-        <li>
-            <Link>Home</Link>
-        </li>
-
-        <li>
-            <Link>All Toys</Link>
-        </li>
-        <li>
-            <Link>My Toys</Link>
-        </li>
-        <li>
-            <Link>Add Toy</Link>
-        </li>
-
-        <li>
-            <Link>Blog</Link>
-        </li>
-    </>
-
     return (
         <div className="navbar bg--100 px-5">
             <div className="navbar-start">
