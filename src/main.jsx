@@ -9,11 +9,11 @@ import {
 } from "react-router-dom";
 import Main from './Layout/Main.jsx';
 import ErrorPage from './pages/Error/ErrorPage';
-import App from './App';
 import Blog from './pages/Blog/Blog';
 import Login from './pages/LogIn/Login';
 import Registration from './pages/Reg/Registration';
 import AuthProvider from './Provider/AuthProvider';
+import Home from './pages/Home/Home/Home';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <App></App>
+        element: <Home></Home>
       },
       {
         path: 'blog',
