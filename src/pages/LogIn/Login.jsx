@@ -36,7 +36,7 @@ const Login = () => {
                 console.log(error);
                 setLoginError(error.message)
             })
-    }
+    }  
 
     const handleGoogle = () => {
         signInGoogle()
