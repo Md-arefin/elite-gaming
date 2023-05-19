@@ -54,7 +54,7 @@ const Gallery = () => {
                     <img className="" src="https://i.ibb.co/cth5tTP/portrait-woman-with-virtual-reality-headset.jpg" alt="" />
                 </div>
                 <div>
-                    <img className="lg:h-[440px]" src="https://i.ibb.co/0J81C0f/gamers-having-fun-while-playing-videogames.jpg" alt="" />
+                    <img className="lg:h-[442px]" src="https://i.ibb.co/0J81C0f/gamers-having-fun-while-playing-videogames.jpg" alt="" />
                 </div>
                 <div>
                     <img className="" src="https://i.ibb.co/3TBvYHx/louis-philippe-poitras-Oit-YIb-HSy-WU-unsplash.jpg" alt="" />

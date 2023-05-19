@@ -42,7 +42,7 @@ const Countdown = () => {
             <div className="stats bg-white text-black shadow w-full text-center">
 
                 <div className="stat">
-                    <div className="stat-title font-semibold lg:text-2xl text-black">Level Up Your Summer Gaming:
+                    <div className="stat-title font-semibold lg:text-3xl text-black">Level Up Your Summer Gaming:
                     <span  className='lg:hidden'> <br/></span>
                      Unbeatable Deals on Elite Gear!</div>
 
@@ -72,8 +72,7 @@ const Countdown = () => {
                             sec
                         </div>
                     </div>
-
-
+                    <div className="text-red-500 font-bold text-3xl mt-5">30% Discount</div>
                 </div>
 
             </div>
