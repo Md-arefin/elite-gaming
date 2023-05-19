@@ -1,7 +1,11 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+
+    const { signInUser } = useContext(AuthContext)
 
     const handleLogin = event => {
         event.preventDefault();
@@ -10,6 +14,15 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email, password)
+
+        // pass reg
+
+        signInUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch( error => console.log(error))
     }
 
     return (

@@ -37,21 +37,21 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li>
-                        <Link>Home</Link>
+                        <Link to='/'>Home</Link>
                     </li>
 
                     <li>
-                        <Link>All Toys</Link>
+                        <Link to='/allToys'>All Toys</Link>
                     </li>
                     <li>
-                        <Link>My Toys</Link>
+                        <Link to='/blog'>My Toys</Link>
                     </li>
                     <li>
-                        <Link>Add Toy</Link>
+                        <Link to='/blog'>Add Toy</Link>
                     </li>
 
                     <li>
-                        <Link>Blog</Link>
+                        <Link to='/blog'>Blog</Link>
                     </li>
                 </ul>
             </div>

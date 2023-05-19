@@ -1,15 +1,30 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
+
+    const { createUser } = useContext(AuthContext);
 
     const handleRegistration = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        const name = form.name.value;
+        const photo = form.photo.value;
 
-        console.log(email, password)
+        console.log(email, password,name, photo)
+
+        // pass reg
+
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch( error => console.log(error))
     }
 
     return (

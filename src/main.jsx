@@ -13,6 +13,7 @@ import App from './App';
 import Blog from './pages/Blog/Blog';
 import Login from './pages/LogIn/Login';
 import Registration from './pages/Reg/Registration';
+import AuthProvider from './Provider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
-        path:'login',
+        path: 'login',
         element: <Login></Login>
       },
       {
@@ -45,7 +46,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className='max-w-[1200px] mx-auto px-2'>
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </React.StrictMode>
   </div>,
 )
