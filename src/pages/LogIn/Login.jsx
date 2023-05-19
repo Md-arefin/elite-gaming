@@ -1,11 +1,14 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
 
-    const { signInUser } = useContext(AuthContext)
+    const [loginError, setLoginError] = useState("");
+
+    const { signInUser, signInGoogle } = useContext(AuthContext);
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -15,14 +18,35 @@ const Login = () => {
 
         console.log(email, password)
 
-        // pass reg
+        // pass Validation start
+
+        setLoginError('')
+
+        if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password)) {
+            setLoginError("your password should be minimum 8 characters, at least 1 letter and 1 number and 1 special character");
+            return;
+        }
 
         signInUser(email, password)
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch( error => console.log(error))
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+                setLoginError(error.message)
+            })
+    }
+
+    const handleGoogle = () => {
+        signInGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -60,10 +84,15 @@ const Login = () => {
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             </div>
                             <p className='text-xs mt-5 pl-1'>Show Password</p>
+
+                            <p className='text-red-800 font-semibold'>{loginError}</p>
+
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
 
-                                <button className="btn my-5">
+                                <button
+                                    onClick={handleGoogle}
+                                    className="btn my-5">
                                     <img className='w-8 mx-5' src="https://i.ibb.co/XZxLpRs/png-transparent-google-logo-google-text-trademark-logo-removebg-preview.png" alt="" />
                                     Login with
                                     Google</button>

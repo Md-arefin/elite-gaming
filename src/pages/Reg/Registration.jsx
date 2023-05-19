@@ -1,11 +1,11 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
-
-    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState("");
+    const { createUser,signInGoogle } = useContext(AuthContext);
 
     const handleRegistration = event => {
         event.preventDefault();
@@ -19,6 +19,13 @@ const Registration = () => {
 
         // pass reg
 
+        setError('')
+
+        if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password)) {
+            setError("your password should be minimum 8 characters, at least 1 letter and 1 number and 1 special character");
+            return;
+        }
+
         createUser(email, password)
         .then(result =>{
             const user = result.user;
@@ -26,6 +33,18 @@ const Registration = () => {
         })
         .catch( error => console.log(error))
     }
+
+    const handleGoogle = () => {
+        signInGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+
 
     return (
         <div className="hero min-h-screen rounded bg-base-100 mx-auto">
@@ -78,11 +97,13 @@ const Registration = () => {
                             </div>
 
                             <p className='text-xs mt-5 pl-1'>Show Password</p>
-
+                            <p className='text-red-800 font-semibold'>{error}</p>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Sign up" />
 
-                                <button className="btn my-5">
+                                <button
+                                onClick={handleGoogle}
+                                className="btn my-5">
                                     <img className='w-8 mx-5' src="https://i.ibb.co/XZxLpRs/png-transparent-google-logo-google-text-trademark-logo-removebg-preview.png" alt="" />
                                     Signup with
                                     Google
