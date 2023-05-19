@@ -1,4 +1,5 @@
 import Carousal from "../Carousal/Carousal";
+import Countdown from "../Countdown/Countdown";
 
 
 const Home = () => {
@@ -11,10 +12,14 @@ const Home = () => {
                     <h2>Gaming Gear</h2>
                 </div>
             </div>
-            <div className="my-10 text-center font-semibold text-4xl px-3">
-                <h3>Introducing the Ultimate Console Experience</h3>
+            <div className="my-10 text-center font-semibold text-4xl ">
+                <h3>Unleash the Power: Discover the Revolutionize Gaming Experience</h3>
             </div>
             <Carousal></Carousal>
+            <div className="text-center">
+                <Countdown></Countdown>
+            </div>
+           
         </div>
     );
 };
