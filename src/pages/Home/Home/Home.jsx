@@ -1,5 +1,6 @@
 import Carousal from "../Carousal/Carousal";
 import Countdown from "../Countdown/Countdown";
+import Gallery from "../Gallery/Gallery";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             <div className="text-center">
                 <Countdown></Countdown>
             </div>
+            <Gallery></Gallery>
            
         </div>
     );
