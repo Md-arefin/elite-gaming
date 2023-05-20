@@ -2,11 +2,10 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useLoaderData } from 'react-router-dom';
 import ToyTable from '../ToyTable/ToyTable';
 
+
 const AllToys = () => {
 
     const toys = useLoaderData();
-
-
 
     return (
         <div>

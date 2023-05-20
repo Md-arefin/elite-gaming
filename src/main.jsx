@@ -19,6 +19,10 @@ import MyToys from './pages/MyToys/MyToys/MyToys';
 import AddToy from './pages/AddToy/AddToy/AddToy';
 import SingleToy from './pages/SingleToy/SingleToy';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const router = createBrowserRouter([
   {
@@ -40,9 +44,9 @@ const router = createBrowserRouter([
         element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
       },
       {
-        path:'toy/:id',
+        path: 'toy/:id',
         element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/eliteGear/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/eliteGear/${params.id}`)
       },
       {
         path: 'addToy',
@@ -71,6 +75,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
       <AuthProvider>
         <RouterProvider router={router} />
+        <ToastContainer />
       </AuthProvider>
     </React.StrictMode>
   </div>,
