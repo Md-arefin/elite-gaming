@@ -38,12 +38,12 @@ const Countdown = () => {
     return (
 
 
-        <div className='transition duration-150 ease-out hover:ease-in'>
-            <div className="stats bg-white text-black shadow w-full text-center">
+        <div className='animate-bounce w-[90%] mx-auto'>
+            <div className="lg:h-48 stats bg-white text-black shadow w-full text-center">
 
-                <div className="stat">
-                    <div className="stat-title font-semibold lg:text-3xl text-black">Level Up Your Summer Gaming:
-                    <span  className='lg:hidden'> <br/></span>
+                <div className="stat relative ">
+                    <div className="stat-title font-semibold lg:text-3xl text-black ">Level Up Your Summer Gaming: 
+                    <span  className='lg:hidden'> <br/></span> 
                      Unbeatable Deals on Elite Gear!</div>
 
                     <div className="grid grid-flow-col gap-5 text-center auto-cols-max ml-10 lg:ml-96 mt-3">
@@ -72,7 +72,11 @@ const Countdown = () => {
                             sec
                         </div>
                     </div>
-                    <div className="text-red-500 font-bold text-3xl mt-5">30% Discount</div>
+                    <div className="mt-5 absolute lg:top-10 lg:left-[210px]
+                    top-14
+                    ">
+                        <img className='w-[25%] lg:w-[30%]' src="https://i.ibb.co/zrBQCmw/507-5073772-30-off-sticker-png-transparent-png-removebg-preview.png" alt="" />
+                    </div>
                 </div>
 
             </div>
