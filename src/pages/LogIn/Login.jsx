@@ -1,14 +1,15 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
 
     const [loginError, setLoginError] = useState("");
-
     const { signInUser, signInGoogle } = useContext(AuthContext);
-
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.form?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -29,20 +30,22 @@ const Login = () => {
 
         signInUser(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                const userLogged = result.user;
+                navigate(form, { replace: true });
+                console.log(userLogged);
             })
             .catch(error => {
                 console.log(error);
                 setLoginError(error.message)
             })
-    }  
+    }
 
     const handleGoogle = () => {
         signInGoogle()
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                const userLogged = result.user;
+                navigate(from, { replace: true });
+                console.log(userLogged);
             })
             .catch(error => {
                 console.log(error.message)

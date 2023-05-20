@@ -75,14 +75,14 @@ const Countdown = () => {
                             sec
                         </div>
                     </div>
-                    <div className="mt-5 absolute top-[70px] lg:top-[-113px] lg:right-[700px]
+                    <div className="mt-5 absolute right-[180px] top-[45px] lg:top-[-113px] lg:right-[700px]
                     ">
                         <div>
                             <Player
                                 autoplay
                                 loop
                                 src="https://assets3.lottiefiles.com/packages/lf20_zsrpgica.json"
-                                className='w-[50%] lg:w-[75%] '
+                                className=' lg:w-[75%] '
                             >
                                 <Controls visible={!true} buttons={['play', 'repeat', 'frame', 'debug']} />
                             </Player>

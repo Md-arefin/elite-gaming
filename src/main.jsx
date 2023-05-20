@@ -17,6 +17,8 @@ import Home from './pages/Home/Home/Home';
 import AllToys from './pages/AllToys/AllToys/AllToys';
 import MyToys from './pages/MyToys/MyToys/MyToys';
 import AddToy from './pages/AddToy/AddToy/AddToy';
+import SingleToy from './pages/SingleToy/SingleToy';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -30,15 +32,21 @@ const router = createBrowserRouter([
       },
       {
         path: 'allToys',
-        element: <AllToys></AllToys>
+        element: <AllToys></AllToys>,
+        loader: () => fetch('http://localhost:5000/eliteGear')
       },
       {
         path: 'myToys',
-        element: <MyToys></MyToys>
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },
+      {
+        path:'toy/:id',
+        element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/eliteGear/${params.id}`)
       },
       {
         path: 'addToy',
-        element: <AddToy></AddToy>
+        element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
       },
       {
         path: 'blog',

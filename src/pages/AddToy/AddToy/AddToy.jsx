@@ -23,7 +23,7 @@ const AddToy = () => {
             Select: select,
             SellerEmail: sellerEmail,
             SellerName: sellerName,
-            Rating: rating,
+            rating: rating,
             Quantity: quantity,
             description: description
         }

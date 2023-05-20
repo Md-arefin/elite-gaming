@@ -1,6 +1,13 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { useLoaderData } from 'react-router-dom';
+import ToyTable from '../ToyTable/ToyTable';
 
 const AllToys = () => {
+
+    const toys = useLoaderData();
+
+
+
     return (
         <div>
             <div>
@@ -20,6 +27,38 @@ const AllToys = () => {
                 </div>
 
             </div>
+            {/*  */}
+
+            <div>
+
+                <div className="overflow-x-auto">
+                    <table className="table w-full">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Seller Name</th>
+                                <th>Sub-category</th>
+                                <th>Available Quantity</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* row 1 */}
+                            {
+                                toys.map(toy => <ToyTable
+                                    key={toy._id}
+                                    toy={toy}
+                                    ></ToyTable>
+                                )
+                            }
+                            {/* row 2 */}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
         </div>
     );

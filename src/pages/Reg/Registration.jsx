@@ -5,7 +5,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
     const [error, setError] = useState("");
-    const { createUser,signInGoogle } = useContext(AuthContext);
+    const { createUser,signInGoogle, updateUserProfile } = useContext(AuthContext);
 
     const handleRegistration = event => {
         event.preventDefault();
@@ -28,8 +28,11 @@ const Registration = () => {
 
         createUser(email, password)
         .then(result =>{
-            const user = result.user;
-            console.log(user);
+            const newUser = result.user;
+            updateUserProfile({
+                displayName: name, photoURL: photo
+            })
+            console.log( newUser);
         })
         .catch( error => console.log(error))
     }
