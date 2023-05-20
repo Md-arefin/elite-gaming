@@ -73,7 +73,7 @@ const Countdown = () => {
                         </div>
                     </div>
                     <div className="mt-5 absolute lg:top-10 lg:left-[210px]
-                    top-14
+                    top-14 
                     ">
                         <img className='w-[25%] lg:w-[30%]' src="https://i.ibb.co/zrBQCmw/507-5073772-30-off-sticker-png-transparent-png-removebg-preview.png" alt="" />
                     </div>

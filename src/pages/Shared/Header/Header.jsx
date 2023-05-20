@@ -12,21 +12,21 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li>
-                            <Link>Home</Link>
+                            <Link to='/'>Home</Link>
                         </li>
 
                         <li>
-                            <Link>All Toys</Link>
+                            <Link to='/allToys'>All Toys</Link>
                         </li>
                         <li>
-                            <Link>My Toys</Link>
+                            <Link to='/myToys'>My Toys</Link>
                         </li>
                         <li>
-                            <Link>Add Toy</Link>
+                            <Link to='/addToy'>Add Toy</Link>
                         </li>
 
                         <li>
-                            <Link>Blog</Link>
+                            <Link to='/blog'>Blog</Link>
                         </li>
                     </ul>
                 </div>
@@ -41,13 +41,13 @@ const Header = () => {
                     </li>
 
                     <li>
-                        <Link to='/allToys'>All Toys</Link>
+                        <Link to='/allToys'>AllToys</Link>
                     </li>
                     <li>
-                        <Link to='/blog'>My Toys</Link>
+                        <Link to='/myToys'>My Toys</Link>
                     </li>
                     <li>
-                        <Link to='/blog'>Add Toy</Link>
+                        <Link to='/addToy'>Add Toy</Link>
                     </li>
 
                     <li>
