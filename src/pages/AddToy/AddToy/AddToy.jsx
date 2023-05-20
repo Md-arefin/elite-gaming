@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2'
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 const AddToy = () => {
 
@@ -57,11 +58,21 @@ const AddToy = () => {
                 <div className="hero-content flex-col">
                     <div className="text-center mb-10">
 
-                        <h1 className="lg:text-5xl text-2xl font-bold">Add your Toys in our arsenal</h1>
+                        <h1 className="lg:text-5xl text-2xl font-bold">Add your weapon in our arsenal</h1>
+                        <div className='mt-5'>
+                            <Player
+                                autoplay
+                                loop
+                                src="https://assets3.lottiefiles.com/packages/lf20_zvkr2yw6.json"
+                                className='w-[60%] '
+                            >
+                                <Controls visible={!true} buttons={['play', 'repeat', 'frame', 'debug']} />
+                            </Player>
+                        </div>
                     </div>
                     <div className="card  w-full border-4 shadow-2xl bg-base-100">
-                        <div className="card-body lg:w-[800px]">
-                            <h1 className="text-3xl font-bold text-center">Please Add Your Toy Carefully!</h1>
+                        <div className="card-body lg:w-full">
+                            <h1 className="text-lg lg:text-3xl font-bold text-center">Please Add Your Product Carefully!</h1>
 
                             <form onSubmit={handleToy}>
 
@@ -167,7 +178,7 @@ const AddToy = () => {
                                         name='description'
                                         placeholder="Product description" className="input input-bordered" required />
                                 </div>
-                                
+
                                 <div className="form-control mt-6">
                                     <input className="btn btn-primary" type="submit" value="Add my toy" />
                                 </div>
