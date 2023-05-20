@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
-
+import { Tooltip } from 'react-tooltip'
 
 const Header = () => {
 
@@ -75,7 +75,12 @@ const Header = () => {
                         <div className="flex items-center justify-center gap-5 ">
                             <div className="avatar">
                                 <div className="w-8 lg:w-12 rounded">
-                                    <img src={user.photoURL} alt="Tailwind-CSS-Avatar-component" />
+
+                                    <div data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+                                        <img src={user.photoURL} alt="Tailwind-CSS-Avatar-component"
+                                        />
+                                        <Tooltip id="my-tooltip" />
+                                    </div>
                                 </div>
                             </div>
                             <button className="btn"

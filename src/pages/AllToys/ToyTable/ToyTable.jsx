@@ -10,7 +10,7 @@ const ToyTable = ({ toy }) => {
     const { SellerName, ProductName, Price, Select, Quantity, _id } = toy;
 
     const handleDetails = id => {
-        // console.log(id)
+        console.log(id)
         toast("You have to log in first to view details!");
     }
 

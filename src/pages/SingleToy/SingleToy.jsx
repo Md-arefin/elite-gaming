@@ -13,7 +13,7 @@ const SingleToy = () => {
     console.log(singleToy, "single")
 
     return (
-        <div>
+        <div className="mt-10">
             <div className="card card-compact w-full bg-white text-black shadow-xl">
                 <figure>
                     <img className="w-1/2" src={Photo} alt="Shoes" />
