@@ -7,7 +7,7 @@ const Controller = () => {
     const [myController, setMyController] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/eliteGears?Select=Controller')
+       fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGears?Select=Controller')
         .then(res => res.json())
         .then(data =>{
             console.log(data)

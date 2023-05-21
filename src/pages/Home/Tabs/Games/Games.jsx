@@ -7,7 +7,7 @@ const Games = () => {
     const [myGames, setMyGames] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/eliteGears?Select=Games')
+       fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGears?Select=Games')
         .then(res => res.json())
         .then(data =>{
             console.log(data)

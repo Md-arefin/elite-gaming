@@ -12,7 +12,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, SetMyToys] = useState([]);
 
-    const url = `http://localhost:5000/eliteGames?email=${user?.email}`;
+    const url = `https://video-games-world-server-md-arefin.vercel.app/eliteGames?email=${user?.email}`;
 
     console.log(myToys)
 
@@ -37,7 +37,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/eliteGear/${id}`, {
+                fetch(`https://video-games-world-server-md-arefin.vercel.app/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

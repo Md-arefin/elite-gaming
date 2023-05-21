@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/eliteGear')
+        loader: () => fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGear')
       },
       {
         path: 'myToys',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: 'toy/:id',
         element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/eliteGear/${params.id}`)
+        loader: ({ params }) => fetch(`https://video-games-world-server-md-arefin.vercel.app/eliteGear/${params.id}`)
       },
       {
         path: 'addToy',
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       {
         path: 'updateToy/:id',
         element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/eliteGear/${params.id}`)
+        loader: ({ params }) => fetch(`https://video-games-world-server-md-arefin.vercel.app/eliteGear/${params.id}`)
       },
       {
         path: 'blog',

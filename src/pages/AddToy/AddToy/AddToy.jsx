@@ -41,7 +41,7 @@ const AddToy = () => {
 
         //  send toys to server
 
-        fetch('http://localhost:5000/eliteGear', {
+       fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGear', {
             method: "POST",
             headers: {
                 'content-type': "application/json"

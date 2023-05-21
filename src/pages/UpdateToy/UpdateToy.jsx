@@ -24,7 +24,7 @@ const UpdateToy = () => {
 
         console.log(updateToy );
 
-        fetch(`http://localhost:5000/eliteGear/${_id}`, {
+        fetch(`https://video-games-world-server-md-arefin.vercel.app/eliteGear/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': "application/json"

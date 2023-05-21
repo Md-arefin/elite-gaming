@@ -6,7 +6,7 @@ const Accessory = () => {
     const [myAccessory, setMyAccessory] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/eliteGears?Select=Gaming%20Accessory')
+       fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGears?Select=Gaming%20Accessory')
         .then(res => res.json())
         .then(data =>{
             console.log(data)
