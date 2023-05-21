@@ -19,13 +19,14 @@ const Home = () => {
             <div className="my-10 text-center font-semibold text-4xl ">
                 <h3>Unleash the Power: Discover the Revolutionize Gaming Experience</h3>
             </div>
+
             <Carousal></Carousal>
             <div className="text-center">
                 <Countdown></Countdown>
             </div>
             <SecTabs></SecTabs>
             <Gallery></Gallery>
-           
+
         </div>
     );
 };

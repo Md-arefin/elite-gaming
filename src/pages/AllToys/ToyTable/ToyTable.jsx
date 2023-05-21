@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { FaArrowRight } from "react-icons/fa";
 
 const ToyTable = ({ toy }) => {
@@ -9,10 +7,7 @@ const ToyTable = ({ toy }) => {
 
     const { SellerName, ProductName, Photo,Price, Select, Quantity, _id, email } = toy;
 
-    const handleDetails = id => {
-        console.log(id)
-        toast("You have to log in first to view details!");
-    }
+
 
     return (
         <>
@@ -34,7 +29,7 @@ const ToyTable = ({ toy }) => {
                 <td>
                     <Link to={`/toy/${_id}`}>
                         <button
-                            onClick={() => handleDetails(_id)}
+                           
                             className="btn"><FaArrowRight/></button>
                     </Link>
 

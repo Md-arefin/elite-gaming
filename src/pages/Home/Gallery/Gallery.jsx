@@ -1,9 +1,12 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Gallery = () => {
     return (
-        <div className="my-10">
-            <h3 className="text-center text-lg lg:text-6xl font-bold">Explore a World of Elite Gaming Gear</h3>
+        <div  data-aos="fade-right" className="my-10">
+            <h3  className="text-center text-lg lg:text-6xl font-bold">Explore a World of Elite Gaming Gear</h3>
+
             <div className="grid  grid-cols-2 lg:grid-cols-4 md:grid-cols-3 lg:gap-5 my-10" >
                 <div className="h-[400px]">
                     <div>

@@ -1,13 +1,19 @@
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ControllerCard = ({controller}) => {
 
     const { Photo, Price, ProductName, rating, _id
     } = controller;
+
+    const handleDetails =() => {
+        
+        toast("You have to log in first to view details!");
+    }
 
 
     return (
@@ -23,7 +29,7 @@ const ControllerCard = ({controller}) => {
                 </p>
                 <div className="card-actions justify-end">
                     <Link to={`/toy/${_id}`}>
-                        <button className="btn btn-primary">Details</button>
+                        <button  onClick={handleDetails} className="btn btn-primary">Details</button>
                     </Link>
                 </div>
             </div>
