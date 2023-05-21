@@ -21,8 +21,8 @@ const Home = () => {
             <div className="text-center">
                 <Countdown></Countdown>
             </div>
-            <Gallery></Gallery>
             <SecTabs></SecTabs>
+            <Gallery></Gallery>
            
         </div>
     );

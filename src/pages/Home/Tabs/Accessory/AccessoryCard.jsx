@@ -3,15 +3,14 @@ import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
 
 
-const ConsoleCard = ({ console }) => {
+const AccessoryCard = ({accessory}) => {
 
     const { Photo, Price, ProductName, rating, _id
-    } = console;
+    } = accessory;
 
 
-    
     return (
-        <div className="card w-[95%] lg:w-96  bg-base-100 shadow-xl">
+       <div className="card w-[95%] lg:w-96  bg-base-100 shadow-xl">
             <figure><img className="h-[384px] w-full" src={Photo} alt="Shoes" /></figure>
             <div className="card-body relative">
                 <h2 className="card-title">{ProductName}</h2>
@@ -31,4 +30,4 @@ const ConsoleCard = ({ console }) => {
     );
 };
 
-export default ConsoleCard;
+export default AccessoryCard;

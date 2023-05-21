@@ -1,6 +1,8 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'
+import Accessory from './Accessory/Accessory';
 import Console from './Console';
+import Controller from './Controller/Controller';
 import Games from './Games/Games';
 
 const SecTabs = () => {
@@ -11,6 +13,7 @@ const SecTabs = () => {
         <Tab>Console</Tab>
         <Tab>Games</Tab>
         <Tab>Controller</Tab>
+        <Tab>Gaming Accessory</Tab>
       </TabList>
 
       <TabPanel>
@@ -20,7 +23,10 @@ const SecTabs = () => {
         <Games></Games>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 2</h2>
+       <Controller></Controller>
+      </TabPanel>
+      <TabPanel>
+        <Accessory></Accessory>
       </TabPanel>
     </Tabs>
   );
