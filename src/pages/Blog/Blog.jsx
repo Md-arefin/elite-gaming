@@ -1,6 +1,10 @@
+import useTitle from "../../Hooks/useTitle";
 
 
 const Blog = () => {
+
+    useTitle('Blog')
+    
     return (
         <div className="space-y-5 my-12 px-5">
             {/* Question-1 */}

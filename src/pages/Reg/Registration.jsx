@@ -2,11 +2,18 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
+
+    useTitle("Registration")
+
+    const [showPassword, setShowPassword] = useState(false);
+
+
     const [error, setError] = useState("");
-    const { createUser,signInGoogle, updateUserProfile } = useContext(AuthContext);
+    const { createUser, signInGoogle, updateUserProfile } = useContext(AuthContext);
 
     const handleRegistration = event => {
         event.preventDefault();
@@ -16,7 +23,7 @@ const Registration = () => {
         const name = form.name.value;
         const photo = form.photo.value;
 
-        console.log(email, password,name, photo)
+        console.log(email, password, name, photo)
 
         // pass reg
 
@@ -28,23 +35,27 @@ const Registration = () => {
         }
 
         createUser(email, password)
-        .then(result =>{
-            const newUser = result.user;
-            updateUserProfile({
-                displayName: name, photoURL: photo
+            .then(result => {
+                const newUser = result.user;
+                updateUserProfile({
+                    displayName: name, photoURL: photo
+                })
+                Swal.fire(
+                    'Registration Successful!',
+                    'Welcome to Elite Gamer Gear',
+                    'success'
+                )
+                console.log(newUser);
             })
-            Swal.fire(
-                'Registration Successful!',
-                'Welcome to Elite Gamer Gear',
-                'success'
-              )
-            console.log( newUser);
-        })
-        .catch( error => {
-            console.log(error)
-            setError(error.message)
-        })
+            .catch(error => {
+                console.log(error)
+                setError(error.message)
+            })
     }
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const handleGoogle = () => {
         signInGoogle()
@@ -55,7 +66,7 @@ const Registration = () => {
                     'Good job!',
                     'Welcome to Elite Gamer Gear',
                     'success'
-                  )
+                )
                 console.log(user);
             })
             .catch(error => {
@@ -104,7 +115,10 @@ const Registration = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                <input
+                                    name='password'
+                                    type={showPassword ? 'text' : 'password'}
+                                    placeholder="password" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
@@ -114,14 +128,16 @@ const Registration = () => {
                                 <input type="text" name='photo' placeholder="photo url" className="input input-bordered" required />
                             </div>
 
-                            <p className='text-xs mt-5 pl-1'>Show Password</p>
+                            <p
+                                onClick={togglePasswordVisibility}
+                                className='text-xs mt-5 pl-1 cursor-pointer'>{showPassword ? 'Hide' : 'Show'} Password</p>
                             <p className='text-red-800 font-semibold'>{error}</p>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Sign up" />
 
                                 <button
-                                onClick={handleGoogle}
-                                className="btn my-5">
+                                    onClick={handleGoogle}
+                                    className="btn my-5">
                                     <img className='w-8 mx-5' src="https://i.ibb.co/XZxLpRs/png-transparent-google-logo-google-text-trademark-logo-removebg-preview.png" alt="" />
                                     Signup with
                                     Google
@@ -129,7 +145,7 @@ const Registration = () => {
                             </div>
                         </form>
 
-                        <p className='text-center mt-3'>Already have an account? 
+                        <p className='text-center mt-3'>Already have an account?
                             <Link className='mx-1' to='/login'>Please Login</Link>
                         </p>
 

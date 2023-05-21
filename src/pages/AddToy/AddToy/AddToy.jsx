@@ -2,8 +2,11 @@ import Swal from 'sweetalert2'
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const AddToy = () => {
+
+    useTitle('AddToy')
 
     const {user} = useContext(AuthContext);
 

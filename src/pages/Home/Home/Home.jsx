@@ -1,3 +1,4 @@
+import useTitle from "../../../Hooks/useTitle";
 import Carousal from "../Carousal/Carousal";
 import Countdown from "../Countdown/Countdown";
 import Gallery from "../Gallery/Gallery";
@@ -5,6 +6,7 @@ import SecTabs from "../Tabs/SecTabs";
 
 
 const Home = () => {
+    useTitle("Home")
     return (
         <div className="my-10">
             <div className="relative">

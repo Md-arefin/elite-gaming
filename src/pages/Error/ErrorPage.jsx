@@ -1,7 +1,9 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const ErrorPage = () => {
+    useTitle('Error')
     return (
         <div className='relative my-10'>
             <Player

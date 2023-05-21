@@ -1,9 +1,12 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import ToyTable from '../ToyTable/ToyTable';
 
 
 const AllToys = () => {
+
+    useTitle('AllToys')
 
     const toys = useLoaderData();
 

@@ -2,9 +2,14 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+
+    useTitle('Login')
+
+    const [showPassword, setShowPassword] = useState(false);
 
     const [loginError, setLoginError] = useState("");
 
@@ -50,6 +55,10 @@ const Login = () => {
                 setLoginError(error.message)
             })
     }
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const handleGoogle = () => {
         signInGoogle()
@@ -100,9 +109,9 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                <input  type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
                             </div>
-                            <p className='text-xs mt-5 pl-1'>Show Password</p>
+                            <p onClick={togglePasswordVisibility} className='text-xs mt-5 pl-1 cursor-pointer'>{showPassword ? 'Hide' : 'Show'} Password</p>
 
                             <p className='text-red-800 font-semibold'>{loginError}</p>
 
