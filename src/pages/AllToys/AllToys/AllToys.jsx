@@ -34,7 +34,8 @@ const AllToys = () => {
                     <table className="table w-full">
                         {/* head */}
                         <thead>
-                            <tr>
+                            <tr className='text-center'>
+                                <th>Picture</th>
                                 <th>Product Name</th>
                                 <th>Seller Name</th>
                                 <th>Seller Email</th>
@@ -50,7 +51,7 @@ const AllToys = () => {
                                 toys.map(toy => <ToyTable
                                     key={toy._id}
                                     toy={toy}
-                                    ></ToyTable>
+                                ></ToyTable>
                                 )
                             }
                             {/* row 2 */}

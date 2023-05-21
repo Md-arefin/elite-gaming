@@ -67,7 +67,8 @@ const MyToys = () => {
                     {/* head */}
                     <thead>
 
-                        <tr>
+                        <tr className="text-center">
+                            <th>Picture</th>
                             <th>Product Name</th>
                             <th>Seller Name</th>
                             <th>Seller Email</th>

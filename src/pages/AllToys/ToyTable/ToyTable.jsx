@@ -7,7 +7,7 @@ const ToyTable = ({ toy }) => {
 
     // console.log(toy)
 
-    const { SellerName, ProductName, Price, Select, Quantity, _id, email } = toy;
+    const { SellerName, ProductName, Photo,Price, Select, Quantity, _id, email } = toy;
 
     const handleDetails = id => {
         console.log(id)
@@ -17,8 +17,14 @@ const ToyTable = ({ toy }) => {
     return (
         <>
             {/* row 1 */}
-            <tr className="hover">
-
+            <tr className="hover text-center">
+            <td>
+                    <div className="avatar">
+                        <div className="w-16 rounded">
+                            <img src={Photo}/>
+                        </div>
+                    </div>
+                </td>
                 <td>{ProductName}</td>
                 <td>{SellerName}</td>
                 <td>{email}</td>
