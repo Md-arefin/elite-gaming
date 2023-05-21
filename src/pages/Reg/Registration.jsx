@@ -1,6 +1,7 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
@@ -32,15 +33,28 @@ const Registration = () => {
             updateUserProfile({
                 displayName: name, photoURL: photo
             })
+            Swal.fire(
+                'Registration Successful!',
+                'Welcome to Elite Gamer Gear',
+                'success'
+              )
             console.log( newUser);
         })
-        .catch( error => console.log(error))
+        .catch( error => {
+            console.log(error)
+            setError(error.message)
+        })
     }
 
     const handleGoogle = () => {
         signInGoogle()
             .then(result => {
                 const user = result.user;
+                Swal.fire(
+                    'Good job!',
+                    'Welcome to Elite Gamer Gear',
+                    'success'
+                  )
                 console.log(user);
             })
             .catch(error => {

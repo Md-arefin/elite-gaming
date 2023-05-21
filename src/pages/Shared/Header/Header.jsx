@@ -56,12 +56,17 @@ const Header = () => {
                     <li>
                         <Link to='/allToys'>AllToys</Link>
                     </li>
-                    <li>
-                        <Link to='/myToys'>My Toys</Link>
-                    </li>
-                    <li>
-                        <Link to='/addToy'>Add Toy</Link>
-                    </li>
+                    {
+                        user ?
+                            <>
+                                <li>
+                                    <Link to='/myToys'>My Toys</Link>
+                                </li>
+                                <li>
+                                    <Link to='/addToy'>Add Toy</Link>
+                                </li>
+                            </> : ''
+            }
 
                     <li>
                         <Link to='/blog'>Blog</Link>
@@ -77,7 +82,7 @@ const Header = () => {
                                 <div className="w-8 lg:w-12 rounded">
 
                                     <div data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
-                                        <img src={user.photoURL} alt="Tailwind-CSS-Avatar-component"
+                                        <img src={user.photoURL} alt=""
                                         />
                                         <Tooltip id="my-tooltip" />
                                     </div>

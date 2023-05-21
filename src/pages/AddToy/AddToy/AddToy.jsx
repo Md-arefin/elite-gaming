@@ -1,7 +1,13 @@
 import Swal from 'sweetalert2'
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const AddToy = () => {
+
+    const {user} = useContext(AuthContext);
+
+    console.log(user)
 
     const handleToy = event => {
         event.preventDefault();
@@ -21,7 +27,7 @@ const AddToy = () => {
             Photo: photo,
             Price: price,
             Select: select,
-            SellerEmail: sellerEmail,
+            email: sellerEmail,
             SellerName: sellerName,
             rating: rating,
             Quantity: quantity,
@@ -117,6 +123,7 @@ const AddToy = () => {
                                     </label>
                                     <input type="email"
                                         name="sellerEmail"
+                                        defaultValue={user.email}
                                         placeholder="Enter your email" className="input input-bordered" required />
                                 </div>
 

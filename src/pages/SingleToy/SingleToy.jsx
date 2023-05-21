@@ -8,7 +8,7 @@ const SingleToy = () => {
 
     const singleToy = useLoaderData();
 
-    const { Photo, Price, ProductName, Quantity, rating, Select, SellerEmail, SellerName, description } = singleToy;
+    const { Photo, Price, ProductName, Quantity, rating, Select, email, SellerName, description } = singleToy;
 
     console.log(singleToy, "single")
 
@@ -22,7 +22,7 @@ const SingleToy = () => {
                     <h2 className=" text-center font-semibold text-2xl lg:text-7xl">{ProductName}</h2>
                     <div className="space-y-5">
                         <p><span className="lg:text-3xl font-semibold px-5">Seller Name:</span> <span className="lg:text-2xl">{SellerName}</span></p>
-                        <p><span className="lg:text-3xl font-semibold px-5">Seller Email:</span> <span className="lg:text-2xl">{SellerEmail}</span></p>
+                        <p><span className="lg:text-3xl font-semibold px-5">Seller Email:</span> <span className="lg:text-2xl">{email}</span></p>
                         <p><span className="lg:text-3xl font-semibold px-5">Sub-category:</span> <span className="lg:text-2xl">{Select}</span></p>
                         <p><span className="lg:text-3xl font-semibold px-5">Available Quantity:</span> <span className="lg:text-2xl">{Quantity}</span></p>
                         <p><span className="lg:text-3xl font-semibold px-5">Price:</span> <span className="lg:text-2xl"><span className="font-serif font-semibold px-1">$</span>{Price}</span></p>

@@ -1,17 +1,23 @@
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
 
     const [loginError, setLoginError] = useState("");
+
     const { signInUser, signInGoogle } = useContext(AuthContext);
+
     const navigate = useNavigate();
+
     const location = useLocation();
+
     const from = location.state?.form?.pathname || '/';
 
     const handleLogin = event => {
+
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -31,7 +37,12 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 const userLogged = result.user;
-                navigate(form, { replace: true });
+                Swal.fire(
+                    'Login Successful!',
+                    'Good to see you',
+                    'success'
+                )
+                navigate(from, { replace: true });
                 console.log(userLogged);
             })
             .catch(error => {
@@ -45,6 +56,11 @@ const Login = () => {
             .then(result => {
                 const userLogged = result.user;
                 navigate(from, { replace: true });
+                Swal.fire(
+                    'Login Successful!',
+                    'Good to see you',
+                    'success'
+                )
                 console.log(userLogged);
             })
             .catch(error => {

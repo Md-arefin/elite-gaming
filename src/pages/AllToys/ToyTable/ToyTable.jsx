@@ -7,7 +7,7 @@ const ToyTable = ({ toy }) => {
 
     // console.log(toy)
 
-    const { SellerName, ProductName, Price, Select, Quantity, _id } = toy;
+    const { SellerName, ProductName, Price, Select, Quantity, _id, email } = toy;
 
     const handleDetails = id => {
         console.log(id)
@@ -21,6 +21,7 @@ const ToyTable = ({ toy }) => {
 
                 <td>{ProductName}</td>
                 <td>{SellerName}</td>
+                <td>{email}</td>
                 <td>{Select}</td>
                 <td>{Quantity}</td>
                 <td>${Price}</td>
