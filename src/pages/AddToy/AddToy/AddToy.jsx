@@ -148,7 +148,7 @@ const AddToy = () => {
                                     <label className="label">
                                         <span className="label-text">Price</span>
                                     </label>
-                                    <input type="number"
+                                    <input type="text"
                                         name="price"
                                         placeholder="Enter product price" className="input input-bordered" required />
                                 </div>

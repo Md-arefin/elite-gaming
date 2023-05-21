@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaTrashAlt, FaRegEdit } from "react-icons/fa";
 
-const MyToy = ({ toy, handleDelete }) => {
+const MyToy = ({ toy, handleDelete}) => {
 
     const { Price, Photo, ProductName, Quantity, Select, email, SellerName, _id } = toy
     return (
@@ -23,7 +23,7 @@ const MyToy = ({ toy, handleDelete }) => {
                 <td>${Price}</td>
 
                 <td>
-                    <Link to=''>
+                    <Link to={`/updateToy/${_id}`}>
                         <button
                             className="btn"><FaRegEdit /></button>
                     </Link>

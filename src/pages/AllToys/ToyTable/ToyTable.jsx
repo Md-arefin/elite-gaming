@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { FaArrowRight } from "react-icons/fa";
 
 const ToyTable = ({ toy }) => {
 
@@ -35,7 +35,7 @@ const ToyTable = ({ toy }) => {
                     <Link to={`/toy/${_id}`}>
                         <button
                             onClick={() => handleDetails(_id)}
-                            className="btn">View Details</button>
+                            className="btn"><FaArrowRight/></button>
                     </Link>
 
                 </td>

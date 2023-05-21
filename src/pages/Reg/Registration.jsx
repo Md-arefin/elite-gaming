@@ -50,6 +50,7 @@ const Registration = () => {
         signInGoogle()
             .then(result => {
                 const user = result.user;
+
                 Swal.fire(
                     'Good job!',
                     'Welcome to Elite Gamer Gear',

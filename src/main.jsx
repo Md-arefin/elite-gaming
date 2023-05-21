@@ -21,6 +21,7 @@ import SingleToy from './pages/SingleToy/SingleToy';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UpdateToy from './pages/UpdateToy/UpdateToy';
 
 
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
       {
         path: 'addToy',
         element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+      },
+      {
+        path: 'updateToy/:id',
+        element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/eliteGear/${params.id}`)
       },
       {
         path: 'blog',

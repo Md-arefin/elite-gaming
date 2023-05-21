@@ -1,6 +1,7 @@
 import Carousal from "../Carousal/Carousal";
 import Countdown from "../Countdown/Countdown";
 import Gallery from "../Gallery/Gallery";
+import SecTabs from "../Tabs/SecTabs";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
                 <Countdown></Countdown>
             </div>
             <Gallery></Gallery>
+            <SecTabs></SecTabs>
            
         </div>
     );
