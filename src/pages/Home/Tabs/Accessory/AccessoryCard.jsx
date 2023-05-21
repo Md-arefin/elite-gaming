@@ -20,7 +20,7 @@ const AccessoryCard = ({accessory}) => {
             <figure><img className="h-[384px] w-full" src={Photo} alt="Shoes" /></figure>
             <div className="card-body relative">
                 <h2 className="card-title">{ProductName}</h2>
-                <p><span>Price:</span>{Price}</p>
+                <p><span>Price: <span className="font-serif font-semibold px-1">$</span></span>{Price}</p>
                 <p><span>Rating:</span>
                     <span className='flex justify-center items-start gap-2 absolute left-[90px] top-[100px]'>
                         {rating} <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
