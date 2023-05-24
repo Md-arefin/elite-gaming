@@ -37,7 +37,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://video-games-world-server-md-arefin.vercel.app/${id}`, {
+                fetch(`https://video-games-world-server-md-arefin.vercel.app/eliteGear/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -38,7 +38,8 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGear')
+        loader: () => fetch('https://video-games-world-server-md-arefin.vercel.app/eliteGear') 
+// 
       },
       {
         path: 'myToys',
